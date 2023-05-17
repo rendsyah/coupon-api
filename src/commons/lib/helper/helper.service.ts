@@ -152,11 +152,7 @@ export class HelperService {
         const decodeRequest = Buffer.from(request, 'base64').toString('ascii');
         const splitRequest = decodeRequest.split(':');
 
-        if (splitRequest.length !== 2) {
-            return null;
-        }
-
-        const cryptoIv = Buffer.from(splitRequest.shift(), 'binary');
+        const cryptoIv = Buffer.from(splitRequest?.shift() || "", 'binary');
         const encryptedText = Buffer.from(splitRequest.join(':'), 'base64');
         const decipher = createDecipheriv(
             this.configService.get('app.SERVICE_CRYPTO_ALGORITHM'),
