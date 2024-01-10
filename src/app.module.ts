@@ -15,6 +15,8 @@ import { ApiTransformInterceptor } from '@commons/interceptor/api-transform.inte
 import { ApiExceptionsFilter } from '@commons/filter/api-exception-filter';
 
 // Import All Service Modules
+import { CouponModule } from '@modules/coupon/coupon.module';
+import { ParseModule } from '@modules/parse/parse.module';
 
 // Import Service
 import { AppController } from './app.controller';
@@ -30,10 +32,12 @@ import { AppService } from './app.service';
         LimiterConfigModule,
         StaticConfigModule,
         HelperConfigModule,
+        CouponModule,
+        ParseModule,
     ],
     controllers: [AppController],
     providers: [
-        { provide: APP_INTERCEPTOR, useClass: ApiTimeoutInterceptor },
+        // { provide: APP_INTERCEPTOR, useClass: ApiTimeoutInterceptor },
         { provide: APP_INTERCEPTOR, useClass: ApiTransformInterceptor },
         { provide: APP_FILTER, useClass: ApiExceptionsFilter },
         AppService,

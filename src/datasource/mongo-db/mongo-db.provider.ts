@@ -1,5 +1,5 @@
 // Import All Repository
-import { UsersRepository } from './repository';
+import { CouponRedeemRepository, CouponRepository, CouponUndianRepository } from './repository';
 
 // Define All Mongo DB Providers
-export const MongoDbProviders = [UsersRepository];
+export const MongoDbProviders = [CouponRepository, CouponRedeemRepository, CouponUndianRepository];

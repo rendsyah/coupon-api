@@ -5,15 +5,21 @@ import { Injectable } from '@nestjs/common';
 import { IMongoDbModels } from '@datasource/interfaces/mongo-db.interface';
 
 // Import Repository
-import { UsersRepository } from './repository/users.repository';
+import { CouponRedeemRepository, CouponRepository, CouponUndianRepository } from './repository';
 
 @Injectable()
 export class MongoDbService {
-    constructor(private readonly usersRepository: UsersRepository) {}
+    constructor(
+        private readonly couponRepository: CouponRepository,
+        private readonly couponRedeemRepository: CouponRedeemRepository,
+        private readonly couponUndianRepository: CouponUndianRepository,
+    ) {}
 
     getModels(): IMongoDbModels {
         return {
-            UsersModels: this.usersRepository,
+            CouponModels: this.couponRepository,
+            CouponRedeemModels: this.couponRedeemRepository,
+            CouponUndianModels: this.couponUndianRepository,
         };
     }
 }

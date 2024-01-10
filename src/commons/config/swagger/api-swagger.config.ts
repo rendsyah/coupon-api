@@ -5,8 +5,8 @@ import { DocumentBuilder, OpenAPIObject, SwaggerDocumentOptions, SwaggerModule }
 // Define Api Swagger Config
 export const apiSwaggerConfig = async (app: INestApplication): Promise<OpenAPIObject> => {
     const document = new DocumentBuilder()
-        .setTitle('TEMPLATE API')
-        .setDescription('Template API documentation')
+        .setTitle('COUPON API')
+        .setDescription('Coupon API documentation')
         .setTermsOfService('http://example.com/terms')
         .setContact('Developer', 'http://www.example.com/support', 'example@gmail.com')
         .setVersion('1.0')

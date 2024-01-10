@@ -1,5 +1,5 @@
 // Import Modules
-import { Document, FilterQuery, Model, UpdateQuery, UpdateWriteOpResult } from 'mongoose';
+import { Document, FilterQuery, InsertManyOptions, Model, UpdateQuery, UpdateWriteOpResult } from 'mongoose';
 
 // Define Base Repository
 export abstract class BaseRepository<T> {
@@ -23,5 +23,9 @@ export abstract class BaseRepository<T> {
 
     async delete(entityFilterQuery: FilterQuery<T>): Promise<unknown> {
         return this.entityModels.deleteOne(entityFilterQuery);
+    }
+
+    async count(entityFilterQuery: FilterQuery<T>): Promise<number> {
+        return this.entityModels.count(entityFilterQuery);
     }
 }

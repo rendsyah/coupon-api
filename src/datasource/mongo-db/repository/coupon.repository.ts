@@ -7,11 +7,11 @@ import { Model } from 'mongoose';
 import { BaseRepository } from './base.repository';
 
 // Import Entity
-import { Users, UsersDocument } from '../models/users.entity';
+import { Coupon, CouponDocument } from '../models/coupon.entity';
 
 @Injectable()
-export class UsersRepository extends BaseRepository<UsersDocument> {
-    constructor(@InjectModel(Users.name) private readonly usersModel: Model<UsersDocument>) {
-        super(usersModel);
+export class CouponRepository extends BaseRepository<CouponDocument> {
+    constructor(@InjectModel(Coupon.name) private readonly couponModel: Model<CouponDocument>) {
+        super(couponModel);
     }
 }

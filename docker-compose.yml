@@ -11,6 +11,7 @@ services:
             - .:/vol/app
         networks:
             - shared-networks
+
 networks:
-    shared-networks:
-        external: true
+    harmony-networks:
+        name: harmony-networks
